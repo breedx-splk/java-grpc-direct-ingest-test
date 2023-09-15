@@ -28,7 +28,7 @@ public class Application {
         while(true){
             attempt = attempt + 1;
             SpanBuilder spanBuilder = tracer.spanBuilder("example.test");
-            spanBuilder.setAttribute("attempt.num", 1);
+            spanBuilder.setAttribute("attempt.num", attempt);
             Span span = spanBuilder.startSpan();
             try (Scope scope = span.makeCurrent()) {
                 System.out.print(new Date());
