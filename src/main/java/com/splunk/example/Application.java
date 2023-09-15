@@ -45,11 +45,11 @@ public class Application {
     private OpenTelemetry initializeOtel(Properties props) {
         System.out.println("Initializing otel sdk...");
 
-        System.setProperty("otel.exporter.otlp.protocol", "http/protobuf");
+        System.setProperty("otel.exporter.otlp.protocol", "grpc");
         System.setProperty("otel.resource.attributes", "service.name=grpc.test.app,environment=grpc.test");
 
         String realm = props.getProperty("realm");
-        String endpoint = "https://ingest." + realm + ".signalfx.com/v2/trace/otlp";
+        String endpoint = "https://ingest." + realm + ".signalfx.com";
         System.setProperty("otel.exporter.otlp.traces.endpoint", endpoint);
 
         String token = props.getProperty("token");
