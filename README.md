@@ -2,7 +2,8 @@
 # gRPC Direct Ingest Sample App
 
 This app will attempt to do send very simple span data directly to 
-a Splunk ingest datapoint. The data will be sent using `http/protobuf`.
+a Splunk ingest datapoint. The data will be sent using `grpc` with data 
+encoded as protobuf.
 
 To run this app, you must first create a file named `env.props` that contains
 the realm (typically us0, us1, eu0, etc)
